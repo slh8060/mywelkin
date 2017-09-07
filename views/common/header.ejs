@@ -1,0 +1,61 @@
+<!--header-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="welkin/libs/bootstrap/v3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="welkin/src/styles/app.css">
+</head>
+<body>
+<header class="header">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-home" <%if(!index) {%> style="background: #222" <%}%>>
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <img class="pull-left" src="welkin/src/assets/logo/48_63.png" alt="">
+                <a class="navbar-brand" href="#">WELKIN</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="#">特性</a></li>
+                    <li><a href="#">规范</a></li>
+                    <li><a href="#">文档</a></li>
+                    <li><a href="#">what' new?</a></li>
+
+                </ul>
+
+                <div class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="search-component-input" placeholder="Amount">
+                                <div class="input-group-addon" id="search-component-btn" style="cursor: pointer">GO!</div>
+                            </div>
+                            <ul class="list-group search-component-list" id="search-component-list">
+                                <li class="list-group-item">快速开始</li>
+                                <li class="list-group-item">栅格系统</li>
+                                <li class="list-group-item">响应式工具</li>
+                                <li class="list-group-item">排版</li>
+                                <li class="list-group-item">导航条</li>
+                                <li class="list-group-item">工具提示</li>
+                                <li class="list-group-item">工具111</li>
+                                <li class="list-group-item">工具222</li>
+                                <li class="list-group-item">工具333</li>
+                                <li class="list-group-item">下拉菜单</li>
+                                <li class="list-group-item">进度条</li>
+                                <li class="list-group-item">警告框</li>
+                                <li class="list-group-item">模态框</li>
+                            </ul>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

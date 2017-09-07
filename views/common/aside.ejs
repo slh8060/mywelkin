@@ -1,0 +1,66 @@
+<!--aside-->
+<div class="app-aside">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+
+                        <a role="button" <%if (belongs != 'stylesheet') {%> class="collapsed" aria-expanded="false"<%} else {%> aria-expanded="true" <%}%>data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-controls="collapseOne">
+                            样式
+                        </a>
+                    </h4>
+                </div>
+
+                <div id="collapseOne" <% if(belongs != 'stylesheet'){%> class="panel-collapse collapse" <%} else {%> class="panel-collapse collapse in" <%}%> role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="/getstarted">快速开始</a></li>
+                            <li class="list-group-item"><a href="/grid">栅格系统</a></li>
+                            <li class="list-group-item"><a href="/responsive_utilities">响应式工具</a></li>
+                            <li class="list-group-item"><a href="/composing">排版</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a <%if (belongs != 'component') {%> class="collapsed" aria-expanded="false"<%} else {%> aria-expanded="true" <%}%>role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            组件
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" <% if(belongs != 'component'){%> class="panel-collapse collapse" <%} else {%> class="panel-collapse collapse in" <%}%> role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="/navbar">导航条</a></li>
+                            <li class="list-group-item"><a href="/tooltips">工具提示</a></li>
+                            <li class="list-group-item"><a href="/dropdown">下拉菜单</a></li>
+                            <li class="list-group-item"><a href="/progress">进度条</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a <%if (belongs != 'plugin') {%> class="collapsed" aria-expanded="false"<%} else {%> aria-expanded="true" <%}%> role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            插件
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" <% if(belongs != 'plugin'){%> class="panel-collapse collapse" <%} else {%> class="panel-collapse collapse in" <%}%> role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="/alert">警告框</a></li>
+                            <li class="list-group-item"><a href="/modal">模态框</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+

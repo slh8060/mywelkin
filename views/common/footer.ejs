@@ -1,0 +1,110 @@
+<!--footer-->
+<footer class="footer">
+    <div class="container text-center">
+        <img src="welkin/src/assets/logo/144_16.png" alt="">
+        <p>Powered by Sunyard ©1900-2099. ...........</p>
+    </div>
+</footer>
+
+<script src="welkin/libs/jquery/1.9.1/jquery.js"></script>
+<script src="welkin/libs/bootstrap/v3.3.7/js/bootstrap.js"></script>
+
+<script>
+    $(function () {
+
+        var searchList = $('#search-component-list'),
+                searchBtn = $('#search-component-btn'),
+                searchInput = $('#search-component-input'),
+                componentList = [
+                    {name: '快速开始', url: 'getstarted'},
+                    {name: '栅格系统', url: 'grid'},
+                    {name: '响应式工具', url: 'responsive_utilities'},
+                    {name: '排版', url: 'composing'},
+                    {name: '导航条', url: 'navbar'},
+                    {name: '工具提示', url: 'tooltips'},
+                    {name: '工具111', url: 'tooltips'},
+                    {name: '工具222', url: 'tooltips'},
+                    {name: '工具333', url: 'tooltips'},
+                    {name: '进度条', url: 'progress'},
+                    {name: '下拉菜单', url: 'dropdown'},
+                    {name: '模态框', url: 'modal'},
+                    {name: '警告框', url: 'alert'},
+                    {name: '工具提示', url: 'tooltips'}
+                ];
+
+        searchList.parent().css('position', 'relative');
+
+
+        var index = 0;
+        var val;
+        var fitLi = [];
+
+        searchInput.on('keyup', function (e) {
+            /*Enter按钮*/
+            if (e.keyCode == 13) {
+                if (searchList.children('li').show()) {
+                    var selVal = searchList.find('.item-selected').text();
+                    searchInput.val(selVal);
+                    searchList.children('li').hide();
+                }
+            }
+
+            /*向上按钮*/
+            else if (e.keyCode == 38) {
+                //  $(this).val("").focus().val(val);
+                if (index != 0) {
+                    index--;
+                    searchInput.val(searchList.children('li:eq(' + fitLi[index] + ')').text());
+                }
+            }
+
+            /*向下按钮*/
+            else if (e.keyCode == 40) {
+                //  $(this).val("").focus().val(val);
+                if (index != fitLi.length - 1) {
+                    index++;
+                    searchInput.val(searchList.children('li:eq(' + fitLi[index] + ')').text());
+                }
+            }
+
+            else {
+                fitLi = [];
+                val = $(this).val();
+                searchList.children('li').each(function () {
+                    if (val.length > 0 && $(this).text().indexOf(val) != -1) {
+                        $(this).show();
+                        var indexLi = $(this).index();
+                        fitLi.push(indexLi);
+                    } else {
+                        $(this).hide();
+                    }
+                })
+            }
+
+            searchList.children('li').removeClass('item-selected');
+            searchList.children('li:eq(' + fitLi[index] + ')').addClass('item-selected');
+        });
+
+        searchList.children('li').on('click', function () {
+            var selVal = $(this).text();
+            searchInput.val(selVal);
+            searchList.hide();
+        });
+
+        function searchGo(e) {
+            e.preventDefault();
+            var val = searchInput.val();
+            $(componentList).each(function () {
+                if (this.name == val) {
+                    window.location.href = '/' + this.url;
+                }
+            })
+        }
+
+        searchBtn.on('click', searchGo);
+        searchList.parents('form').on('submit', searchGo);
+
+    });
+
+</script>
+
